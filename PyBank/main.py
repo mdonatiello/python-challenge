@@ -4,7 +4,7 @@ import csv
 #col = []
 total_months = 0
 total = 0
-average_change = 0
+total_avg_difference = 0
 greatest_increase = 0
 greatest_decrease = 0
 
@@ -19,17 +19,62 @@ with open(csvpath, newline='') as csvfile:
     csv_header = next(csvreader)
     print(f"CSV Header: {csv_header}")
     for row in csvreader:
-       print(row)
+#      print(row)
 #      int(len(col[0]))
 #      total_months=int(len(col[0]))
 #      total_months = sum(1 for (row[0]) in "budget_data1.csv")
 #      total_months = sum(1 for row in csvreader)
        total_months = len(data.splitlines()) - 1
-       print(total_months)
+#      print(total_months)
        total += float(row[1])
-       print(total)
-       average_change = total / total_months
-       print(average_change)       
+#      print(total)
+       
+       x = 2
+       ProfitLoss = []
+       running_total = 0
+       subtotal = 0
+#      total_difference = 0
+       total_months = len(data.splitlines()) - 1
+#      total_avg_difference = running_total / total_months
+       for x in ProfitLoss:
+#for RunningTotal in total_avg_difference:
+           subtotal = (row(x)[1] - row(x-1)[1])
+#          subtotal = (row[x] - row([x-1]))
+           running_total = running_total + subtotal
+           x = x + 1
+print(running_total)
+total_avg_difference = running_total / total_months
+print(total_avg_difference)
+
+print("Financial Analysis")
+print("---------------------------------")
+print("Total Months:",total_months)
+print("Total:",total)
+print("Average Change:",total_avg_difference)
+#   print("Greatest Increase in Profits:",greatest_increase)
+#   print("Greatest Decrease in Profits:",greatest_decrease)
+
+
+#To csv write:
+
+# Specify the file to write to
+#output_path = os.path.join("..", "output", "new.csv")
+
+# Open the file using "write" mode. Specify the variable to hold the contents
+#with open(output_path, 'w', newline='') as csvfile:
+
+    # Initialize csv.writer
+    #csvwriter = csv.writer(csvfile, delimiter=',')
+
+    # Write the first row (column headers)
+    #csvwriter.writerow(['First Name', 'Last Name', 'SSN'])
+
+    # Write the second row
+    #csvwriter.writerow(['Caleb', 'Frost', '505-80-2901'])
+
+
+#      average_change = total / total_months
+#      print(average_change)       
 #      length = len(numbers(row[1]))
 #      average_change = total / length
 #      def average(numbers):
@@ -50,15 +95,6 @@ with open(csvpath, newline='') as csvfile:
 #          print(average_change)
 #      average_change = total/86
 #      print(average_change)
-
-    print("Financial Analysis")
-    print("---------------------------------")
-    print("Total Months:",total_months)
-    print("Total:",total)
-    print("Average Change:",average_change)
-#   print("Greatest Increase in Profits:",greatest_increase)
-#   print("Greatest Decrease in Profits:",greatest_decrease)
-
 
         
 #   file = "budget_data1.csv" 
