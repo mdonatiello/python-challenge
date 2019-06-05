@@ -28,14 +28,28 @@ with open(csvpath, newline='') as csvfile:
        print(total_months)
        total += float(row[1])
        print(total)
+       def average(numbers):
+           length = len(numbers(row[1]))
+           total_profitloss = 0.0
+           for number in numbers:
+#               total_profitloss += float(row[1])
+                total_profitloss += number
+           average_change = (total_profitloss / length)
+       print(average_change)
+#          return total_profitloss / length
+#      print(average(float(row[1]))
+#          average_change = total_profitloss / length
+#          return average_change
+#          average_change = (total_profitloss += number)
+#          print(average_change)
 #      average_change = total/86
 #      print(average_change)
 
-    print("Financial Analysis")
-    print("---------------------------------")
-    print("Total Months:",total_months)
-    print("Total:",total)
-#   print("Average Change:",average_change)
+       print("Financial Analysis")
+       print("---------------------------------")
+       print("Total Months:",total_months)
+       print("Total:",total)
+       print("Average Change:",average_change)
 #   print("Greatest Increase in Profits:",greatest_increase)
 #   print("Greatest Decrease in Profits:",greatest_decrease)
 
