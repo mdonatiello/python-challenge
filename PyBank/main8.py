@@ -33,11 +33,18 @@ with open(file_to_load) as revenue_data:
         month_of_change = month_of_change + [row["Date"]]
         number_of_months = len(month_of_change) - 1
 
+# error handling
+#       if one of the above = 0
+#       else one of the others
 
  # Calculate the average revenue change
+#       revenue_avg = (round((total_revenue_change) / len((revenue_change_list) - 1))
         revenue_avg = (round(((total_revenue_change) / 85), 2))
+#       revenue_avg = sum(revenue_change_list) / len(revenue_change_list)
 #       revenue_avg = (total_revenue_change) / (number_of_months)
 #       revenue_avg = (sum(revenue_change_list) - 867884) / (number_of_months)
+
+#       
        
         # Calculate the greatest increase
         if (revenue_change > greatest_increase[1]):

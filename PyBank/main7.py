@@ -43,7 +43,8 @@ with open(file_to_load) as revenue_data:
 
 
  # Calculate the average revenue change
-        revenue_avg = (round(((total_revenue_change) / 85), 2))
+        revenue_avg = sum(revenue_change_list) / len(revenue_change_list)
+#       revenue_avg = (round(((total_revenue_change) / 85), 2))
 #       revenue_avg = (total_revenue_change) / (number_of_months)
 #       revenue_avg = (sum(revenue_change_list) - 867884) / (number_of_months)
 
